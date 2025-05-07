@@ -20,7 +20,7 @@ const App: React.FC = () => {
       <RecentWork />
       <Companies />
       <MyStartupTitle />
-      <StartupProjects />
+      <StartupProjects imgSrc={''} alt={''} title={''} link={''} />
       <CollaboratingWithMe />
       <Testimonials />
       <Footer />
