@@ -16,17 +16,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   link,
   inDevelopment = false,
 }) => {
+  // Classe dinâmica para status de desenvolvimento
   const statusClass = inDevelopment
     ? 'bg-gray-200 text-font'
     : 'bg-blue-50 text-blue-600';
 
+  // Ícone condicional baseado no status do projeto
   const Icon = inDevelopment ? VscSourceControl : GoLinkExternal;
 
   return (
     <article className="flex flex-col items-center rounded-xl border border-lightGrey bg-white px-10 py-16 text-center shadow-sm">
       <img
         src={imgSrc}
-        alt={alt}
+        alt={alt}  // Certifique-se de que o `alt` é descritivo
         className="mx-auto w-32 object-contain"
         loading="lazy"
       />

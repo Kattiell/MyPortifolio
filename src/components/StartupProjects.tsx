@@ -1,8 +1,5 @@
-// ProjectCard.tsx
 import React from 'react';
-
 interface ProjectCardProps {
-  key: number;
   imgSrc: string;
   alt: string;
   title: string;
@@ -10,9 +7,9 @@ interface ProjectCardProps {
   inDevelopment?: boolean;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ key, imgSrc, alt, title, link, inDevelopment }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ imgSrc, alt, title, link, inDevelopment = false }) => {
   return (
-    <div key={key} className="project-card">
+    <div className="project-card">
       <img src={imgSrc} alt={alt} />
       <h3>{title}</h3>
       {link && <a href={link}>Link</a>}
