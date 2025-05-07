@@ -1,21 +1,24 @@
-import projectsCards from '~/static/projectsCards';
-import ProjectCard from './ProjectCard';
+// ProjectCard.tsx
+import React from 'react';
 
-const StartupProjects: React.FC = () => {
+interface ProjectCardProps {
+  key: number;
+  imgSrc: string;
+  alt: string;
+  title: string;
+  link: string;
+  inDevelopment?: boolean;
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ key, imgSrc, alt, title, link, inDevelopment }) => {
   return (
-    <div className='relative top-[-8rem] grid gap-6 px-[6%] md:grid-cols-2 lg:grid-cols-3'>
-      {projectsCards.map(({ key, imgSrc, alt, title, link, inDevelopment }) => (
-        <ProjectCard
-          key={key}
-          imgSrc={imgSrc}
-          alt={alt}
-          title={title}
-          link={link}
-          inDevelopment={inDevelopment}
-        />
-      ))}
+    <div key={key} className="project-card">
+      <img src={imgSrc} alt={alt} />
+      <h3>{title}</h3>
+      {link && <a href={link}>Link</a>}
+      {inDevelopment && <p>Em Desenvolvimento</p>}
     </div>
   );
 };
 
-export default StartupProjects;
+export default ProjectCard;
